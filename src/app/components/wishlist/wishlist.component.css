@@ -1,0 +1,27 @@
+.example-icon {
+    padding: 0 100px;
+  }
+  
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+
+  .mat-card-image {
+    height: 420px;
+    width: 350px;
+  }
+  .pointer {
+    cursor: pointer;
+  }
+ 
+  .user{
+    color: rgb(255, 255, 255)
+}
+
+mat-card-action{
+  margin:auto;
+}
+
+.comment{
+  color: black
+}

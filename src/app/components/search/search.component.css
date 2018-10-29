@@ -1,0 +1,23 @@
+.example-icon {
+    padding: 0 100px;
+  }
+  
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+
+  .mat-card-image {
+    height: 420px;
+    width: 350px;
+    padding: 20px;
+  }
+  .pointer {
+    cursor: pointer;
+  }
+  .user{
+color: blue;
+  }
+ 
+  .title{
+    size: 20px ;
+  }

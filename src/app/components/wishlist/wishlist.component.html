@@ -1,0 +1,32 @@
+<div class="container-fluid">
+    <mat-grid-list cols="3" rowHeight="150px">
+        <div *ngFor="let movie of movies" align="center"> 
+            <mat-grid-tile colspan="1" rowspan="6">
+                <mat-card class="example-card">
+                        <div class="thumbnail" (click)="selectMovie(movie.imdbId)">
+                    <mat-card-header>
+                        <div mat-card-avatar class="example-header-image"></div>
+                        <mat-card-title>{{movie.movieTitle}}</mat-card-title>
+                        <mat-card-subtitle>{{movie.yearOfRelease}}</mat-card-subtitle>
+                    </mat-card-header>
+                    <img mat-card-image src={{movie.posterUrl}} alt="Movie Poster">
+                    <mat-card-footer>
+                            <div mat-card-avatar class="example-footer-image"></div>
+                            <mat-card-title class="user">Your Rating: {{movie.rating}}</mat-card-title>
+                            <mat-card-title class="user">Comment: {{movie.comment}}</mat-card-title>
+                        </mat-card-footer>
+                </div>
+                    <mat-card-actions> 
+                            <h4 class="title-details" class="comment" >Comment</h4>
+                            <input type="text" #comment class="user">
+                            <button mat-raised-button (click)="updateMovie(movie.imdbId,comment.value)" color="primary">Update Comment</button> 
+                        </mat-card-actions>
+                        <mat-card-actions> 
+                            <button mat-raised-button (click)="onDelete(movie)" color="warn">Delete</button>
+                    </mat-card-actions>
+                </mat-card>
+            </mat-grid-tile>
+            
+        </div>
+      </mat-grid-list>
+</div>
