@@ -42,9 +42,6 @@ import {
   MatTooltipModule,
   MatTreeModule,
 } from '@angular/material';
-import { from } from 'rxjs';
-import { AppModule } from './app.module';
-
 @NgModule({
   exports: [
     CdkTableModule,

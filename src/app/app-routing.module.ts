@@ -1,7 +1,6 @@
 import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
- import { SearchDummyComponent } from './components/search-dummy/search-dummy.component';
 import { SearchComponent } from './components/search/search.component';
 import { WishlistComponent } from './components/wishlist/wishlist.component';
 import { HomeComponent } from './components/home/home.component';

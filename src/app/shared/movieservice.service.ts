@@ -7,12 +7,12 @@ import { environment as env } from "../../environments/environment";
   providedIn: "root"
 })
 export class MovieserviceService {
-  private _url: string = "http://localhost:8080/api/v1/movie";
-  private _url1: string = "http://localhost:8080/api/v1/saveMovie";
+  private _url: string = "https://localhost:8443/api/v1/movie";
+  private _url1: string = "https://localhost:8443/api/v1/saveMovie";
   private omdbUrl: string = "http://www.omdbapi.com/?s=";
   private omdbUrl2: string = "http://www.omdbapi.com/?i=";
   private apiKey: string = "&apikey=6db283eb";
-  private _url2: string = "http://localhost:8080/api/v1/movie/";
+  private _url2: string = "https://localhost:8443/api/v1/movie/";
   private _url3:string = "http://www.omdbapi.com/?s=batman&apikey=6db283eb";
   constructor(private http: HttpClient) {}
 
@@ -43,12 +43,21 @@ export class MovieserviceService {
       },
       error => {
         console.log("Error", error);
+        window.alert(error["error"]);
       });
     return this.http.get(geturl);
   }
 
   deleteMovie(id) {
-    return this.http.delete(this._url2 + id);
+    return this.http.delete(this._url2 + id).subscribe(
+      data => {
+          console.log("DeleteRequest is successful ", data);
+          window.alert("Successfully Deleted");
+      },
+      error => {
+          console.log("Error", error);
+          window.alert(error["error"]);
+      });
   }
 
 
@@ -60,9 +69,11 @@ export class MovieserviceService {
     this.http.put(updateurl,comment).subscribe(
       data => {
           console.log("POST Request is successful ", data);
+          window.alert("Successfully Updated");
       },
       error => {
           console.log("Error", error);
+          window.alert(error["error"]);
       });
   }
 

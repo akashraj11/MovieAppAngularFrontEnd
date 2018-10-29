@@ -22,7 +22,7 @@ export class WishlistComponent implements OnInit {
   }
 
   onDelete(movie){
-    this.movieService.deleteMovie(movie.imdbId).subscribe(res => console.log('Deleted'))
+    this.movieService.deleteMovie(movie.imdbId);
     window.location.reload(true);
  
   }

@@ -14,10 +14,10 @@ export class AppComponent {
   movies;
   omdbMovie ;
   omdbSearchTitle = '';
-  constructor(private movieService: MovieserviceService,private dataService: DataService ) { }
+  constructor() { }
   
   ngOnInit(){
-    this.dataService.currentMovie1.subscribe(movieList=>this.omdbMovie=movieList);
+   
   }
 
 
